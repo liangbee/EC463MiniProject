@@ -1,0 +1,4 @@
+1) Find out why form.error doesn't catch the 403 forbidden error you see when you enter wrong credentials.
+2) Be able to allow users to add/delete rooms and add restraints to limit the number of rooms to be always >= 1.
+3) Find a production server and host the website there.
+4) If we have time: fix what happens when you already log in and open a new log-in page it would still allow you to log in as a different user and show error.
