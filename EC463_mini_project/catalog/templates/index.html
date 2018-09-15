@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+  <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+<body>
+
+  <h2>Welcome, {{user}}!</h2>
+  <p> Number of rooms : {{number_rooms}}</p>
+
+  <h3>Temperature Sensor Readings</h3><div>(will automatically refresh every 10 seconds)</div>
+  <table>
+  <tr>
+    <th>Room</th>
+    <th>Temperature (Celsuis)</th>
+  </tr>
+  {% for key,value in temp_readings.items %}
+  <tr>
+    <td>{{key}}</td>
+    <td> {{value }}</td>
+  </tr>
+  {% endfor %}
+
+  </table>
+
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Room", "Temperature"],
+         {% for key,value in temp_readings.items %}
+		    ['{{key}}', {{value}}],
+		{% endfor %}
+
+      ]);
+
+      var view = new google.visualization.DataView(data);
+
+
+      var options = {
+        title: "Temperature Readings, in celsuis",
+        vAxis: {
+          title: 'Temperature'
+        },
+        hAxis: {
+            title: 'Room'
+        },
+        width: 1000,
+        height: 300,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+    <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+
+
+  </head>
+
+  <head>
+
+  <h3>Humidity Sensor Readings</h3><div>(will automatically refresh every 10 seconds)</div>
+  <table>
+  <tr>
+    <th>Room</th>
+    <th>Humidity (RH)</th>
+  </tr>
+  {% for key,value in humid_readings.items %}
+  <tr>
+    <td>{{key}}</td>
+    <td> {{value }}</td>
+  </tr>
+  {% endfor %}
+
+  </table>
+  </head>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Room", "Humidity"],
+         {% for key,value in humid_readings.items %}
+		    ['{{key}}', {{value}}],
+		{% endfor %}
+
+      ]);
+
+      var view = new google.visualization.DataView(data);
+
+
+      var options = {
+        title: "Humidity Readings, in RH (%)",
+         vAxis: {
+          title: 'Humidity'
+        },
+        hAxis: {
+            title: 'Room'
+        },
+        width: 1000,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+        colors: ['#e0440e'],
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values_humidity"));
+      chart.draw(view, options);
+  }
+  </script>
+    <div id="columnchart_values_humidity" style="width: 900px; height: 300px;"></div>
+
+  </head>
+
+</body>
+
+   <script>
+       setTimeout(function() {
+          location.reload();
+       }, 10000);
+   </script>
+{% endblock %}
+
+
