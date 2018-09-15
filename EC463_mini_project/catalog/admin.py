@@ -6,4 +6,4 @@ admin.site.register(HouseRoom)
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
 
-
+admin.site.site_header='EC463 MiniProject Admin Site'
