@@ -37,8 +37,8 @@ INSTALLED_APPS = [
                   'django.contrib.sessions',
                   'django.contrib.messages',
                   'django.contrib.staticfiles',
-                  'catalog.apps.CatalogConfig',
                   'django.contrib.admin',
+                  'catalog.apps.CatalogConfig',
                   
                   ]
 
@@ -52,7 +52,7 @@ MIDDLEWARE = [
               'django.middleware.clickjacking.XFrameOptionsMiddleware',
               ]
 
-ROOT_URLCONF = 'tempsensor.urls'
+ROOT_URLCONF = 'EC463_mini_project.urls'
 
 TEMPLATES = [
              {
@@ -72,7 +72,7 @@ TEMPLATES = [
              },
              ]
 
-WSGI_APPLICATION = 'tempsensor.wsgi.application'
+WSGI_APPLICATION = 'EC463_mini_project.wsgi.application'
 
 
 # Database
