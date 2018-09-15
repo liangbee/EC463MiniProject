@@ -1,18 +1,21 @@
-from django.urls import path
+from django.conf.urls import url
 from django.contrib import admin
+from django.urls import path
+from catalog import views as core_views
 from django.conf.urls import include
+from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
-from django.views.generic import RedirectView #Add URL maps to redirect the base URL to our application
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
 ]
 
 urlpatterns += [
-	path('catalog/', include('catalog.urls')),
+    path('catalog/', include('catalog.urls')),
 ]
+
 
 urlpatterns += [
     path('', RedirectView.as_view(url='/catalog/')),
@@ -22,4 +25,8 @@ urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += [
     path('accounts/', include('django.contrib.auth.urls')),
+]
+
+urlpatterns += [
+    url(r'^signup/$', core_views.signup, name='signup'),
 ]
