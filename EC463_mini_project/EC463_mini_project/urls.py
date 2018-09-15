@@ -30,3 +30,4 @@ urlpatterns += [
 urlpatterns += [
     url(r'^signup/$', core_views.signup, name='signup'),
 ]
+
