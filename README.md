@@ -10,7 +10,7 @@ Links to development log (Agile sprint planning) :
 
 ## Authors:
 Mohammad Ali Al-Rajjal (mohdali@bu.edu) , &nbsp; Biyao Liang (liangb@bu.edu)    
-## Install project (developer mode): 
+## Install project on local machine (developer mode): 
 * Clone the repository. 
 
 * Install, create and launch a virtual environment using virtualenv with python3.
