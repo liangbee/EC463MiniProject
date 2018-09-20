@@ -1,6 +1,6 @@
 # EC463 MiniProject
 
-This project was written in python3 using the Django webframework 
+This project was written in python3 using the Django web framework 
 
 Link for final project (hosted on AWS): http://13.59.50.148:8000/accounts/login/?next=/catalog/
 
@@ -9,7 +9,13 @@ Links to development log (Agile sprint planning) :
 * Sprint 2 (1 Week): http://bit.ly/2pmJsFJ 
 
 ## Authors:
-Mohammad Ali Al-Rajjal (mohdali@bu.edu) , &nbsp; Biyao Liang (liangb@bu.edu)    
+Mohammad Ali Al-Rajjal (mohdali@bu.edu) , &nbsp; Biyao Liang (liangb@bu.edu)   
+
+## Individual contributions:
+ * Mohammad: Worked on configuring app settings, creating database mapping, implementing the charting API and creating login system 
+ 
+ * Biyao: Worked on data manipulation, URL configurations, front-end template design, and AWS configurations. 
+ 
 ## Install project on local machine (developer mode): 
 * Clone the repository. 
 
