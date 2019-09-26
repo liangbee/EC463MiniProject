@@ -3,6 +3,7 @@
 This project was written in python3 using the Django web framework 
 
 Link for final project (hosted on AWS): http://13.59.50.148:8000/accounts/login/?next=/catalog/
+(this link will not work anymore because we are not paying for the EC2 instance that hosts it anymore :-( )
 
 Links to development log (Agile sprint planning) :  
 * Sprint 1 (1 week):http://bit.ly/2OxIO2N 
